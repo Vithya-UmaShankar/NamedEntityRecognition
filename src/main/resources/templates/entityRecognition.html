@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head lang="en" th:replace="fragments/header :: header"> </head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="w-100 p-3 tab">
+            <button id="ExtractBtn" class="tablinks" onclick="openCity(event, 'Extract')">Extract</button>
+            <button id="DisplayBtn" class="tablinks" onclick="openCity(event, 'Display')">Display</button>
+            <!--<button class="tablinks" onclick="openCity(event, 'Display')">Display</button>-->
+            <button id="UploadBtn" class="tablinks" onclick="openCity(event, 'Upload')">Upload</button>
+        </div>
+
+        <div id="Extract" class="w-100 p-3 tabcontent">
+
+            <form th:action="@{/api/v1/detectEntity}"  method='POST'>
+                <div class="form-group">
+                    <label for="detectEntityText">Text:</label>
+                    <textarea class="form-control" id="detectEntityText" name="detectEntityText" required></textarea>
+                </div>
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="p-2"><button type="submit" name="submit" class="btn btn-info">Extract Entities</button></div>
+                </div>
+            </form>
+
+            <div class="alert alert-info alert-dismissible" th:if="${entities != null} and ${entities == ''}">
+
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                No entities were detected
+            </div>
+
+            <div id="entityRecognition" th:if="${entities != null}" th:utext="${entities}">
+
+            </div>
+
+        </div>
+
+        <div id="Display" class="w-100 p-3 tabcontent">
+            <form th:action="@{/api/v1/display}"  method='POST'>
+                <div class="d-flex justify-content-between mb-3">
+                    <div class="p-2"><button type="submit" name="submit" class="btn btn-info">Display all training files</button></div>
+                </div>
+            </form>
+
+            <table>
+                <tr th:each="fileName: ${fileNames}">
+                    <td>
+                        <div><span th:text="${fileName}"></span></div>
+                        <img th:src="@{${'/Images/' + fileName +'.jpg'}}" />
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+        <div id="Upload" class="w-100 p-3 tabcontent">
+
+            <div class="alert alert-success alert-dismissible" th:if="${uploaded != null} and ${uploaded == 'True'}">
+
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                Files uploaded sucessfully
+            </div>
+
+            <form method="post" th:action="@{/api/v1/uploadFiles}" enctype="multipart/form-data">
+                <table style="width:100%">
+                    <tr th:each="fileLabel : ${fileNamesLabel}">
+                        <td style="width:30%">
+                            <div><span th:text="${fileLabel}"></span></div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <label class="custom-file-upload">
+                                    <input type="file" class="form-control imageUpload" th:name="files" th:id="*{fileLabel}" required/>
+                                    Upload Image
+                                </label>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td>
+                            <div class="d-flex justify-content-between mb-3">
+                                <div class="p-2"><button type="submit" name="submit" class="btn btn-info">Upload</button></div>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+
+    </div>
+</div>
+<div lang="en" th:replace="fragments/footer :: footer"> </div>
+
+
+<script>
+
+   if([[${activeTab}]]){
+        $("#[[${activeTab}]]").css("display", "block");
+        console.log("#[[${activeTab}]]Btn");
+        $("#[[${activeTab}]]Btn").addClass("active");
+   }
+
+   function openCity(evt, cityName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+   }
+</script>
+
+<div lang="en" th:replace="fragments/footer :: footer"> </div>
+</body>
+</html>
+
+
