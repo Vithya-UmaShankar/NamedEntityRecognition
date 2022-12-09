@@ -1,0 +1,47 @@
+ground,ground_long,country,height,width,rounded_rect,batting_record_name,batting_record_country,batting_record_against,batting_record_score,batting_record_date,bowling_record_name,bowling_record_country,bowling_record_against,bowling_record_figures,bowling_record_date,odi_only,measurement_url,notes
+Adelaide Oval,Adelaide Oval,Aus,166.1,127.1,0,Don Bradman,AUS,SA,299*,Jan 1932,Albert Trott,AUS,ENG,8 for 43,Jan 1895,0,https://maps.google.com,
+Bellerive Oval,Bellerive Oval,Aus,174.5,131.4,0,Adam Voges,AUS,WI,269*,Dec 2015,Shane Warne,AUS,NZ,6 for 31,Nov 1993,0,https://maps.google.com,
+MCG,Melbourne Cricket Ground,Aus,147.8,172.9,0,Robert Cowper,AUS,ENG,307,Feb 1966,Sarfraz Nawaz,PAK,AUS,9 for 86,Mar 1979,0,http://www.espncricinfo.com/ci/content/ground/56441.html,
+SCG,Sydney Cricket Ground,Aus,156,154,0,Michael Clarke,AUS,IND,329*,Jan 2012,George Lohmann,ENG,AUS,8 for 35,Feb 1887,0,http://www.espncricinfo.com/ci/content/ground/56544.html,
+The Gabba,Brisbane Cricket Ground,Aus,150,167,0,Michael Clarke,AUS,SA,259*,Nov 2012,Richard Hadlee,NZ ,AUS,9 for 52,Nov 1985,0,https://maps.google.com,
+The WACA,Western Australia Cricket Association Ground ,Aus,149,139,0,Matthew Hayden,AUS,ZIM,380,Oct 2003,Glenn McGrath,AUS,PAK,8 for 24,Dec 2004,0,http://www.espncricinfo.com/ci/content/ground/56490.html,
+Sher-e-Bangla,Sher-e-Bangla National Cricket Stadium,Ban,189.7,138.65,0,Azhar Ali,PAK,BAN,226,May 2015,Taijul Islam,BAN,ZIM,8 for 39,Oct 2014,0,https://maps.google.com,
+ZAC Stadium,Zohur Ahmed Chowdhury Stadium,Ban,141.55,131.8,0,Kumar Sangakkara,SL,BAN,319,Feb 2014,Shakib Al Hasan,BAN,NZ,7 for 36,Oct 2008,0,https://maps.google.com,
+Eden Gardens,Eden Gardens,Ind,141,136.5,0,VVS Laxman,IND,AUS,281,Mar 2001,Lance Klusener,SA,IND,8 for 64,Nov 1996,0,https://maps.google.com,
+Feroz Shah Kotla,Feroz Shah Kotla Ground,Ind,135.65,132.7,0,Bert Sutcliffe,NZ,IND,230*,Dec 1955,Anil Kumble,IND,PAK,10 for 74,Feb 1999,0,https://maps.google.com,
+Green Park Stadium,Green Park Stadium,Ind,165,139.9,0,Sheik Bacchus,WI,IND,250,Feb 1979,Jasubhai Patel,IND,AUS,9 for 69,Dec 1959,0,https://maps.google.com,
+M A Chidambaram,M A Chidambaram Stadium,Ind,145.4,146,0,Virender Sehwag,IND,SA,319,Mar 2008,Mulvantrai Mankad,IND,ENG,8 for 55,Feb 1952,0,https://maps.google.com,
+M. Chinnaswamy,M. Chinnaswamy Stadium,Ind,133.7,131.8,0,Younis Khan,PAK,IND,267,Mar 2005,Nathan Lyon,AUS,IND,8 for 50,Mar 2017,0,https://maps.google.com,
+Mohali Stadium,Punjab Cricket Association IS Bindra Stadium,Ind,144.7,153.8,0,Shikhar Dawan,IND,AUS,187,Mar 2013,Dion Nash,NZ,IND,6 for 27,Oct 1999,0,https://maps.google.com,
+Wankhede Stadium,Wankhede Stadium,Ind,141.7,138.8,0,Clive Lloyd,WI,IND,242*,Jan 1975,Ian Botham,ENG,IND,7 for 48,Feb 1980,0,https://maps.google.com,
+Basin Reserve,Basin Reserve,NZ,148.1,146.8,0,Brendon McCullum,NZ,IND,302,Feb 2014,Richard Hadlee,NZ,IND,7 for 23,Feb 1976,0,https://maps.google.com,
+Bay Oval,Bay Oval,NZ,144,144,0,Hashim Amla,SA,NZ,119,Oct 2014,Matt Henry,NZ,SL,5 for 40,Jan 2016,1,https://maps.google.com,
+Cobham Oval,Cobham Oval,NZ,148,152,0,Rob Nicol,NZ,ZIM,146,Feb 2012,Jacob Oram,NZ,ZIM,3 for 29,Feb 2012,1,https://maps.google.com,
+Eden Park,Eden Park,NZ,136.6,108,1,Wally Hammond,ENG,NZ,336*,Mar 1933,Erapally Prasanna,IND,NZ,8 for 76,Jan 1976,0,https://maps.google.com,Looks more like a rounded rectangle...
+Hagley Oval,Hagley Oval,NZ,149,149,0,Brendon McCullum,NZ,SL,195,Dec 2014,Colin de Grandhomme,NZ,PAK,6 for 41,Nov 2016,0,https://en.wikipedia.org/wiki/Hagley_Oval#Ground_specifications,
+McLean Park,McLean Park,NZ,163,125,0,Jesse Ryder,NZ,IND,201,Mar 2009,Ryan Sidebottom,ENG,NZ,7 for 47,Mar 2008,0,https://maps.google.com,
+Saxton Oval,Saxton Oval,NZ,141,141,0,Kyle Coetzer,SCO,BAN,156,Mar 2015,Kane Williamson,NZ ,BAN,3 for 22,Dec 2016,1,https://maps.google.com,
+Seddon Park,Seddon Park,NZ,128.73,135.94,0,Stephen Fleming,NZ,PAK,192,Dec 2003,Chris Cairns,NZ,WI,7 for 27,Dec 1999,0,https://maps.google.com,
+University Oval,University Oval,NZ,118.7,131.5,0,Darren Bravo,WI,NZ,218,Dec 2013,Daniel Vettori,NZ ,WI,6 for 56,Dec 2008,0,https://maps.google.com,
+Westpac Stadium,Westpac Stadium,NZ,155.3,123.5,0,Martin Guptill,NZ,WI,237*,Mar 2015,Tim Southee,NZ,ENG,7 for 33,Feb 2015,1,http://westpacstadium.co.nz/about-us/stadium-facts/,Calculated as (65.7m + 57.8m) for width and (77.3m + 78m) for height
+Centurion Park,Centurion Park (also SuperSport Park),SA,147.16,126.5,0,Hashim Amla,SA,WI,208,Dec 2014,Kyle Abbott,SA,PAK,7 for 29,Feb 2013,0,https://maps.google.com,
+Kingsmead,Kingsmead Cricket Ground,SA,142.3,122,0,Gary Kirsten,SA,ENG,275,Dec 1999,Hugh Tayfield,SA,ENG,8 for 69,Jan 1957,0,https://maps.google.com,
+Newlands Park,Newlands Cricket Ground,SA,134.4,132.3,1,Stephen Fleming,NZ,SA,262,Apr 2006,John Briggs,ENG,SA,8 for 11,Mar 1889,0,https://maps.google.com,Looks more like a rounded rectangle...
+St George's Park,St George's Park Cricket Ground ,SA,139.8,131.6,1,Herschelle Gibbs,SA,IND,196,Nov 2001,George Lohmann,ENG,SA,8 for 7,Feb 1896,0,https://maps.google.com,Looks more like a rounded rectangle...
+Wanderers,New Wanderers Stadium,SA,154.2,127.3,0,Greg Blewett,AUS,SA,214,Feb 1997,Hugh Tayfield,SA,ENG,9 for 113,Feb 1957,0,https://maps.google.com,
+Colombo Oval,Paikiasothy Saravanamuttu Stadium,SL,127.74,133.9,1,Brendon Kuruppu,SL,NZ,201*,Apr 1987,Richard Hadlee,NZ,SL,5 for 29,Mar 1984,0,https://maps.google.com,Weird shape
+Galle International,Galle International Stadium,SL,163.7,148.7,0,Chris Gayle,WI,SL,333,Nov 2010,Muttiah Muralitharan,SL,ENG,7 for 46,Dec 2003,0,https://maps.google.com,
+Pallekele,Pallekele International Cricket Stadium,SL,162.2,146.1,0,Kusal Mendis,SL,AUS,176,Jul 2016,Rangana Herath,SL,AUS,5 for 54,Jul 2016,0,https://maps.google.com,
+SSC,Sinhalese Sports Club Ground,SL,153.2,154.5,0,Mahela Jayawardene,SL,SA,374,Jul 2006,Rangana Herath,SL,PAK,9 for 127,Aug 2014,0,https://maps.google.com,Mostly circular
+Edgbaston,Edgbaston Cricket Ground,UK,147.34,143.65,0,Alastair Cook,ENG,IND,294,Aug 2011,Wilfred Rhodes,ENG,AUS,7 for 17,May 1902,0,https://maps.google.com,
+Headingley,Headingley Cricket Ground,UK,136.41,142.3,1,Don Bradman,AUS,ENG,334,Jul 1930,Bob Willis,ENG,AUS,8 for 43,Jul 1981,0,https://maps.google.com,Weird shape (cut off at the bottom)
+Lord's,Lord's Cricket Ground,UK,157.6,130.5,1,Graham Gooch,ENG,IND,333,Jul 1990,Ian Botham,ENG,PAK,8 for 34,Jun 1978,0,https://maps.google.com,Looks more like a rounded rectangle...
+Old Trafford,Old Trafford Cricket Ground,UK,144.6,147.1,1,Robert Simpson,AUS,ENG,311,Jul 1964,James Laker,ENG,AUS,10 for 53,Jul 1956,0,https://maps.google.com,Looks more like a rounded rectangle...
+Riverside Ground,Riverside Ground,UK,149.83,158.4,0,Ian Bell,ENG,BAN,162*,Jun 2005,Ryan Harris,AUS,ENG,7 for 117,Aug 2013,0,https://maps.google.com,Weird shape (octagonal)
+The Oval,"The Oval, London (Kennington)",UK,138,145,0,Leonard Hutton,ENG,AUS,364,Aug 1938,Devon Malcolm,ENG,SA,9 for 57,Aug 1994,0,https://maps.google.com,
+Trent Bridge,Trent Bridge,UK,146.3,144.74,1,Denis Compton,ENG,PAK,278,Jul 1954,Stuart Broad,ENG,AUS,8 for 15,Aug 2015,0,https://maps.google.com,Weird shape
+Kensington Oval,Kensington Oval,WI,136.8,140,0,Hanif Mohammed,PAK,WI,337,Jan 1958,Lance Gibbs,WI,IND,8 for 38,Mar 1962,0,https://maps.google.com,
+Queen's Park Oval,Queen's Park Oval,WI,144.2,149.8,0,Sunil Gavaskar,IND,WI,220,Apr 1971,Jack Noriega,WI,IND,9 for 95,Mar 1971,0,https://maps.google.com,
+Sabina Park,Sabina Park,WI,129.8,137,0,Gary Sobers,WI,PAK,365*,Feb 1958,Stephen Harmison,ENG,WI,7 for 12,Mar 2004,0,https://maps.google.com,Mostly circular (some straight edges)
+Harare Sports Club,Harare Sports Club,Zim,145,155.35,0,Gary Kirsten,SA,ZIM,220,Sep 2001,Rangana Herath,SL,ZIM,8 for 63,Nov 2016,0,https://maps.google.com,
+Queens Sports Club,Queens Sports Club,Zim,149.6,139.3,0,Kumar Sangakkara,SL,ZIM,270,May 2004,Paul Strang,ZIM,NZ,8 for 109,Sep 2000,0,https://maps.google.com,

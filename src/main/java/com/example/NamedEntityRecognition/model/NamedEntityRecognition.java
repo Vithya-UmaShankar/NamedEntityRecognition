@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 /**
- * Used to convert the JSON value sent by python into an object
+ * Used to convert the JSON value sent by python into an object. Used when trying to extract entities
  */
 public class NamedEntityRecognition {
     String text;

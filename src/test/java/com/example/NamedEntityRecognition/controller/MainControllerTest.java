@@ -77,20 +77,13 @@ class MainControllerTest {
 
         Boolean pushToElastisearch = Boolean.FALSE;
         String text = "What a great game from Eden Park!";
-        String fileName = "/Users/vithya/Programs/python/entityText.txt";
 
         pushToFile();
-
-        String data = "data={'fileName': '" + fileName + "'} ";
-        StringEntity entity = new StringEntity(data,
-                ContentType.APPLICATION_FORM_URLENCODED);
 
         HttpClient httpClient = mock(HttpClient.class);
         HttpPost httpPost = mock(HttpPost.class);
         HttpResponse httpResponse = mock(HttpResponse.class);
         StatusLine statusLine = mock(StatusLine.class);
-
-        httpPost.setEntity(entity);
 
         when(statusLine.getStatusCode()).thenReturn(200);
         when(httpResponse.getStatusLine()).thenReturn(statusLine);

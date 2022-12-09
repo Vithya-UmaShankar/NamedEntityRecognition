@@ -42,10 +42,12 @@ import java.util.concurrent.Future;
 public class MainController {
 
     private static Logger logger = LoggerFactory.getLogger(MainController.class);
+    public String APP_PATH = "/Users/vithya/Programs/Springboot/InnectoToken/" + "NamedEntityRecognition/Python/";
     HttpClient httpClient = HttpClientBuilder.create().build();
     AsyncHttpClient asyncHttpClient = Dsl.asyncHttpClient();
     String activeTab = "Extract";
     String recognizedEntities = null;
+    String inputText = null;
     String[] fileNames = null;
 
     /**
@@ -96,7 +98,7 @@ public class MainController {
      * @return The webpage
      */
     @GetMapping("/api/v1/detectEntity")
-    public String displayUI(Model model) {
+    public String displayUI(Model model) throws IOException {
 
         model.addAttribute("activeTab", activeTab);
         if (activeTab == "Display") {
@@ -106,11 +108,11 @@ public class MainController {
             model.addAttribute("uploaded", "True");
         }
         if (activeTab == "Extract" && recognizedEntities != null) {
+            model.addAttribute("inputText", inputText);
             model.addAttribute("entities", recognizedEntities);
         }
 
         String[] fileNamesLabel = {"Players", "Cities", "Stadiums", "Organizations", "Batting", "Bowling", "Teams"};
-
         model.addAttribute("fileNamesLabel", fileNamesLabel);
 
         return "entityRecognition";
@@ -125,7 +127,7 @@ public class MainController {
     @GetMapping("/api/v1/reload")
     public String reloadModel(Model model) throws IOException {
 
-        HttpPost request = new HttpPost("http://127.0.0.1:5000/reload");
+        HttpPost request = new HttpPost("http://127.0.0.1:5000/reload?sport=Cricket");
 
         HttpResponse response = httpClient.execute(request);
 
@@ -152,17 +154,12 @@ public class MainController {
             Model model) throws IOException, InterruptedException, ExecutionException {
 
         activeTab = "Extract";
-        Boolean pushToElastisearch = Boolean.FALSE;
-        String fileName = "/Users/vithya/Programs/python/entityText.txt";
+        Boolean pushToElastisearch = Boolean.TRUE;
+        String fileName = APP_PATH + "entityText.txt";
 
         pushToFile(fileName, detectEntityText);
 
-        String data = "data={'fileName': '" + fileName + "'} ";
-        StringEntity entity = new StringEntity(data,
-                ContentType.APPLICATION_FORM_URLENCODED);
-
-        HttpPost request = new HttpPost("http://127.0.0.1:5000/extract");
-        request.setEntity(entity);
+        HttpPost request = new HttpPost("http://127.0.0.1:5000/extract?sport=Cricket");
 
         HttpResponse response = httpClient.execute(request);
         HttpEntity responseEntity = response.getEntity();
@@ -172,17 +169,18 @@ public class MainController {
             ObjectMapper objectMapper = new ObjectMapper();
             NamedEntityRecognition namedEntityRecognition = objectMapper.readValue(result, NamedEntityRecognition.class);
             recognizedEntities = highlightEntities(namedEntityRecognition.getText(), namedEntityRecognition.getStartChar(), namedEntityRecognition.getEndChar(), namedEntityRecognition.getEntityText(), namedEntityRecognition.getEntityLabel());
+            inputText = namedEntityRecognition.getText();
 
             if (pushToElastisearch && recognizedEntities != "") {
 
-                Request request1 = Dsl.post("http://127.0.0.1:5000/elastic")
+                Request request1 = Dsl.post("http://127.0.0.1:5000/elastic?sport=Cricket")
                         .addFormParam("data", result)
                         .build();
                 ListenableFuture<Integer> f = null;
                 f = asyncHttpClient.executeRequest(request1,
                         new AsyncCompletionHandler<Integer>() {
                             @Override
-                            public Integer onCompleted(Response response) throws Exception {
+                             public Integer onCompleted(Response response) throws Exception {
                                 // Do something with the Response
                                 return response.getStatusCode();
                             }
@@ -221,7 +219,7 @@ public class MainController {
     @GetMapping("/api/v1/clearCache")
     public String unloadModel(Model model) throws ExecutionException, InterruptedException {
 
-        Request request = Dsl.get("http://127.0.0.1:5000/terminate").build();
+        Request request = Dsl.get("http://127.0.0.1:5000/terminate?sport=Cricket").build();
         // Basic Async
         Future<Response> responseFuture = asyncHttpClient.executeRequest(request);
         Response response = responseFuture.get();
@@ -241,7 +239,7 @@ public class MainController {
     @PostMapping("/api/v1/display")
     public String displayCSV(Model model) throws IOException {
         activeTab = "Display";
-        HttpPost request = new HttpPost("http://127.0.0.1:5000/display");
+        HttpPost request = new HttpPost("http://127.0.0.1:5000/display?sport=Cricket");
         HttpResponse response = httpClient.execute(request);
         String result = "";
 
@@ -268,10 +266,10 @@ public class MainController {
     public String uploadFiles(@RequestParam("files") MultipartFile[] files, Model model) throws IOException {
 
         activeTab = "Upload";
-        String UPLOAD_DIR = "/Users/vithya/Programs/python/Tensorflow/Projects/NamedEntityRecognition/CSV/";
+        String upload_dir = APP_PATH + "CSV/Cricket/";
         for (int i = 0; i < files.length; i++) {
             String fileName = StringUtils.cleanPath(files[i].getOriginalFilename());// normalize the file path
-            Path pathTarget = Paths.get(UPLOAD_DIR + fileName);
+            Path pathTarget = Paths.get(upload_dir + fileName);
             Files.copy(files[i].getInputStream(), pathTarget, StandardCopyOption.REPLACE_EXISTING);
         }
         return "redirect:/api/v1/detectEntity";

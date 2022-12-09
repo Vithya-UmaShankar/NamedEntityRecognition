@@ -8,7 +8,6 @@
         <div class="w-100 p-3 tab">
             <button id="ExtractBtn" class="tablinks" onclick="openCity(event, 'Extract')">Extract</button>
             <button id="DisplayBtn" class="tablinks" onclick="openCity(event, 'Display')">Display</button>
-            <!--<button class="tablinks" onclick="openCity(event, 'Display')">Display</button>-->
             <button id="UploadBtn" class="tablinks" onclick="openCity(event, 'Upload')">Upload</button>
         </div>
 
@@ -17,7 +16,7 @@
             <form th:action="@{/api/v1/detectEntity}"  method='POST'>
                 <div class="form-group">
                     <label for="detectEntityText">Text:</label>
-                    <textarea class="form-control" id="detectEntityText" name="detectEntityText" required></textarea>
+                    <textarea class="form-control" id="detectEntityText" name="detectEntityText" th:text="${inputText}" required></textarea>
                 </div>
                 <div class="d-flex justify-content-between mb-3">
                     <div class="p-2"><button type="submit" name="submit" class="btn btn-info">Extract Entities</button></div>
@@ -37,6 +36,7 @@
         </div>
 
         <div id="Display" class="w-100 p-3 tabcontent">
+
             <form th:action="@{/api/v1/display}"  method='POST'>
                 <div class="d-flex justify-content-between mb-3">
                     <div class="p-2"><button type="submit" name="submit" class="btn btn-info">Display all training files</button></div>
@@ -47,7 +47,7 @@
                 <tr th:each="fileName: ${fileNames}">
                     <td>
                         <div><span th:text="${fileName}"></span></div>
-                        <img th:src="@{${'/Images/' + fileName +'.jpg'}}" />
+                        <img th:src="@{${'/Images/Cricket/' + fileName +'.jpg'}}" />
                     </td>
                 </tr>
             </table>
